@@ -26,15 +26,15 @@ jobs:
 
       # 4️⃣ Tag image
       - name: Tag image
-        run: docker tag myapache:${{ github.sha }} mydockerhubuser/myapache:latest
+        run: docker tag myapache:${{ github.sha }} amylos/myapache:latest
 
       # 5️⃣ Push image
       - name: Push image
-        run: docker push mydockerhubuser/myapache:latest
+        run: docker push amylos/myapache:latest
 
       # 6️⃣ Optional: Test container locally in the runner
       - name: Run container
-        run: docker run -d -p 8080:80 --name apache-test mydockerhubuser/myapache:latest
+        run: docker run -d -p 8080:80 --name apache-test amylos/myapache:latest
 
       # 7️⃣ Optional: Test site
       - name: Test site
